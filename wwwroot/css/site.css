@@ -1,0 +1,236 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+
+    font-family: Arial;
+    font-size: 14px;
+    color: #22819f
+}
+.tbody tr.highlight {
+    background-color: aqua;
+}
+.tbody tr.selected {
+    color: white;
+    background-color: aqua;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+#hidethis {
+    display: none;
+}
+.container {
+    width: 100%;
+    /*vertical-align: middle;*/
+}
+
+.navbar {
+    color: #ffffff;
+    background-color: #22819f;
+    /*background: #22819f;*/
+    border-radius: 0;
+    vertical-align: middle;
+    height: 30px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navbar2 {
+    padding-top: 8px;
+    height: 35px;
+    padding-right: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-link2 {
+    color: white;
+    border-radius: 3px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+    .nav-link2 a:hover {
+        background-color: #fff;
+        color: #33c;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+.mybtn {
+    color: #00779F;
+    background-color: #ffffff;
+    border-radius: 0;
+    width: 100%;
+    min-height: 35px;
+    text-align: left;
+    font-size: 14px;
+    font-family: Arial;
+
+}
+
+.mybtn2 {
+    color: #00779F;
+    background-color: #ffffff;
+    border-radius: 0;
+    width: 100%;
+    min-height: 35px;
+    text-align: left;
+    font-size: 14px;
+    font-family: Arial;
+}
+
+
+#loginform {
+    vertical-align: top;
+    width: 40%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #22819f;
+    color: #ffffff;
+    padding: 10px 10px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px groove #ffffff;
+    -moz-box-shadow: 0px 1px 1px rgba(000,000,000,0.5), inset 1px 2px 0px rgba(255,255,255,0.4);
+    -webkit-box-shadow: 0px 1px 1px rgba(000,000,000,0.5), inset 1px 2px 0px rgba(255,255,255,0.4);
+    box-shadow: 0px 1px 1px rgba(000,000,000,0.5), inset 1px 2px 0px rgba(255,255,255,0.4);
+    text-shadow: 1px 1px 2px rgba(000,000,000,0.7), 0px 1px 0px rgba(255,255,255,0.4);
+    align-content: center;
+}
+
+#WelcomeMessage {
+    vertical-align: top;
+    width: auto;
+    background-color: lightblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #000000;
+}
+#chaptersContainer {
+    color: #ffffff;
+    background-color: #e8e5e5;
+    width: auto;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-top-style: solid;
+    border-top-width: thin;
+    border-color: black;
+}
+#standardsContainer {
+    color: #ffffff;
+    background-color: #e8e5e5;
+    width: auto;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-top-style: solid;
+    border-top-width: thin;
+    border-color: black;
+}
+#myformInside {
+    width: auto;
+    text-align: left;
+    min-height: 400px;
+    vertical-align: top;
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    background-color: #ffffff;
+    color: #22819f;
+    border-style: inset;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 1px 1px rgba(000,000,000,0.75), inset 1px 2px 0px rgba(255,255,255,0.4);
+    -webkit-box-shadow: 0px 1px 1px rgba(000,000,000,0.75), inset 1px 2px 0px rgba(255,255,255,0.4);
+    box-shadow: 0px 1px 1px rgba(000,000,000,0.75), inset 1px 2px 0px rgba(255,255,255,0.4);
+}
+
+
+#pageDiv {
+    vertical-align: top;
+    width: 100%;
+}
+
+#red {
+background-color: red;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
