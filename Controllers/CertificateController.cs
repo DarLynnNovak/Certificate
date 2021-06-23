@@ -32,5 +32,22 @@ namespace Certificates.Controllers
 			vm.ACSCertificate = CertInfo;
 			return View(vm);
 		}
+		public IActionResult Display(Guid auid)
+		{
+			ACSCertificateViewModel vm = new ACSCertificateViewModel();
+			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
+							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
+							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
+							select new ACSCertificate
+							{
+								ID = c.ID,
+								CertBody = c.CertBody,
+								//ACSUniqueId = auid
+
+							}).ToList();
+
+			vm.ACSCertificate = CertInfo;
+			return View(vm);
+		}
 	}
 }
