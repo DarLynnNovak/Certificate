@@ -15,11 +15,8 @@ namespace Certificates.Controllers
 			_context = certificateContext;
 
 		}
-		public IActionResult Index()
+		public IActionResult Index(Guid auid)
 	{
-
-			var auid = Guid.Parse("D1C0C62C-B099-4058-8F57-FD86363AAD24");
-			//var auid = Convert.ToString(User.Identity.Name);
 			ACSCertificateViewModel vm = new ACSCertificateViewModel();
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
