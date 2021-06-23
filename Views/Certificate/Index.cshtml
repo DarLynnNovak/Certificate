@@ -12,5 +12,5 @@
 
 @foreach (var item in Model.ACSCertificate)
 {
-    @Html.Raw(item.CertBody);
-}
+    @Html.Raw(item.CertBody.Replace("&lt;",""));
+  }

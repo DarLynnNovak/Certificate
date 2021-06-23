@@ -9,12 +9,12 @@ using System.Security.Claims;
 
 namespace Certificates.Controllers
 {
-    public class AccountController : Controller
+	public class AccountController : Controller
     {
-        private CertificateContext _context;
+        private CertificatesContext _context;
 
 
-        public AccountController(CertificateContext certificateContext)
+        public AccountController(CertificatesContext certificateContext)
         {
             _context = certificateContext;
 

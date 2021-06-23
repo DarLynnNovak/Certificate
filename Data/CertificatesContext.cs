@@ -1,11 +1,12 @@
-﻿using Certificates.Models;
+﻿
+using Certificates.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Certificates.Data
 {
-    public class CertificateContext : DbContext
-    {
-        public CertificateContext(DbContextOptions<CertificateContext> options) : base(options)
+	public class CertificatesContext : DbContext
+	{
+        public CertificatesContext(DbContextOptions<CertificatesContext> options) : base(options)
         {
         }
         public DbSet<Person> Person { get; set; }
@@ -14,10 +15,11 @@ namespace Certificates.Data
         public DbSet<ACSCMEEvent> ACSCMEEvent { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>().ToTable("Person");
-            modelBuilder.Entity<ACSPersonCME>().ToTable("acspersoncme");
-            modelBuilder.Entity<ACSCertificate>().ToTable("ACSCertificate");
-            modelBuilder.Entity<ACSCMEEvent>().ToTable("ACSCMEEvent");
-        }
+			modelBuilder.Entity<Person>().ToTable("Person");
+			modelBuilder.Entity<ACSPersonCME>().ToTable("acspersoncme");
+			modelBuilder.Entity<ACSCertificate>().ToTable("ACSCertificate");
+			modelBuilder.Entity<ACSCMEEvent>().ToTable("ACSCMEEvent");
+		}
+
     }
 }
