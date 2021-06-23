@@ -10,7 +10,7 @@ namespace Certificates.Controllers
 		private CertificatesContext _context;
 
 
-		public DisplayController(CertificatesContext certificateContext)
+		public DisplayController(CertificatesContext certificateContext) 
 		{
 			_context = certificateContext;
 
