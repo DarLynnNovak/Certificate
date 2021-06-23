@@ -2,7 +2,7 @@
 using Certificates.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
+using System.Linq; 
 namespace Certificates.Controllers
 {
 	public class DisplayController : Controller
