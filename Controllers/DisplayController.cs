@@ -34,7 +34,6 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;NameTitle&gt;&gt;", p.NameTitle)
 													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
 
-
 							}).ToList();
 
 			vm.ACSCertificateFields = CertInfo;
