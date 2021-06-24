@@ -20,5 +20,12 @@ namespace Certificates.Models
 
         public string CertLine1 { get; set; }
         public string CertLine2 { get; set; }
+
+        public int EventType { get; set; }
+
+        public string CME_Max_Credits { get; set; }
+        public string SACME_Max_Credits { get; set; }
+        public string CE_Max_Credits { get; set; }
+        public string SACE_Max_Credits { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Certificates.Data
         public DbSet<ACSPersonCME> ACSPersonCME { get; set; }
         public DbSet<ACSCertificate> ACSCertificate { get; set; }
         public DbSet<ACSCMEEvent> ACSCMEEvent { get; set; }
-        
+        public DbSet<ACSCMEEventType> ACSCMEEventType { get; set; }
         public DbSet<ACSCertificateFields> ACSCertificateFields { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,6 +21,7 @@ namespace Certificates.Data
 			modelBuilder.Entity<ACSPersonCME>().ToTable("acspersoncme");
 			modelBuilder.Entity<ACSCertificate>().ToTable("ACSCertificate");
 			modelBuilder.Entity<ACSCMEEvent>().ToTable("ACSCMEEvent");
+            modelBuilder.Entity<ACSCMEEventType>().ToTable("ACSCMEEventType");
             modelBuilder.Entity<ACSCertificateFields>().ToTable("ACSCertificateTemplateFields");
         }
 

@@ -21,6 +21,7 @@ namespace Certificates.Controllers
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
 							from p in _context.Person.Where(p => p.Id == pcme.PersonID)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
+							from et in _context.ACSCMEEventType.Where(et=> et.ID == e.EventType)
 							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
 							
 							select new ACSCertificateFields
@@ -33,7 +34,9 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;Suffix&gt;&gt;", p.Suffix)
 													.Replace("&lt;&lt;NameTitle&gt;&gt;", p.NameTitle)
 													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
-
+													.Replace("&lt;&lt;EventType&gt;&gt;", et.Name)
+													.Replace("&lt;&lt;CMEMaxCredits&gt;&gt;", e.CME_Max_Credits)
+													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits)
 							}).ToList();
 
 			vm.ACSCertificateFields = CertInfo;
