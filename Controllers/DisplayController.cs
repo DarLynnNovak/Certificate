@@ -36,7 +36,7 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
 													.Replace("&lt;&lt;EventType&gt;&gt;", et.Name)
 													.Replace("&lt;&lt;CMEMaxCredits&gt;&gt;", e.CME_Max_Credits)
-													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits)
+													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits) 
 							}).ToList();
 
 			vm.ACSCertificateFields = CertInfo;
