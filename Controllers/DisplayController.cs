@@ -16,20 +16,28 @@ namespace Certificates.Controllers
 
 		}
 		public IActionResult Index(Guid auid)
-	{
+		{
 			ACSCertificateViewModel vm = new ACSCertificateViewModel();
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
+							from p in _context.Person.Where(p => p.Id == pcme.PersonID)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
 							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
-							select new ACSCertificate
+							
+							select new ACSCertificateFields
 							{
+								
 								ID = c.ID,
-								CertBody = c.CertBody,
-								//ACSUniqueId = auid
+								CertBody = c.CertBody.Replace("&lt;&lt;Prefix&gt;&gt;", p.Prefix)
+													.Replace("&lt;&lt;FirstName&gt;&gt;",p.FirstName)
+													.Replace("&lt;&lt;LastName&gt;&gt;", p.LastName)
+													.Replace("&lt;&lt;Suffix&gt;&gt;", p.Suffix)
+													.Replace("&lt;&lt;NameTitle&gt;&gt;", p.NameTitle)
+													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
+
 
 							}).ToList();
 
-			vm.ACSCertificate = CertInfo;
+			vm.ACSCertificateFields = CertInfo;
 			return View(vm);
 		}
 	}

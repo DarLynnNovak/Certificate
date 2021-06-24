@@ -10,7 +10,8 @@
 }
 <h3>@ViewData["MyName"]</h3>
 
-@foreach (var item in Model.ACSCertificate)
+@foreach (var item in Model.ACSCertificateFields)
 {
-    @Html.Raw(item.CertBody.Replace("&lt;",""));
-  }
+    @*@Html.Raw(item.CertBody.Replace("&lt;",""));*@
+    @Html.Raw(item.CertBody);
+}

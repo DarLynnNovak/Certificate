@@ -19,6 +19,7 @@ namespace Certificates.Controllers
 	{
 			ACSCertificateViewModel vm = new ACSCertificateViewModel();
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
+							from p in _context.Person.Where(p => p.Id == pcme.PersonID)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
 							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
 							select new ACSCertificate
