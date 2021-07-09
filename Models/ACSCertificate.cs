@@ -8,5 +8,6 @@ namespace Certificates.Models
 		public string CertBody { get; set; }
 		[NotMapped]
 		public string ACSUniqueId { get; set; }
+
 	}
 }

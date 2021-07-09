@@ -1,5 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Certificates.Models
 {
 	public class ACSPersonCME
@@ -8,7 +11,9 @@ namespace Certificates.Models
         public int PersonID { get; set; }
 
         public int ACSCMEEventID { get; set; }
-
+        [Column(TypeName = "CMEDateGranted")]
+        [DisplayName("Date")]
+        [DataType(DataType.Date)]
         public DateTime CMEDateGranted { get; set; }
 
         public decimal CMEType1 { get; set; }

@@ -1,10 +1,14 @@
 ﻿using System;
-
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Certificates.Models
 {
 	public class ACSCMEEvent
 	{
         public int ID { get; set; }
+
+        public int ParentID { get; set; }
 
         public string Name { get; set; }
 
@@ -27,5 +31,11 @@ namespace Certificates.Models
         public string SACME_Max_Credits { get; set; }
         public string CE_Max_Credits { get; set; }
         public string SACE_Max_Credits { get; set; }
+
+        public string CertificateVersion { get; set; }
+
+        [NotMapped]
+        
+        public DateTime DateGranted { get; set; }
     }
 }

@@ -14,4 +14,31 @@
 {
     @*@Html.Raw(item.CertBody.Replace("&lt;",""));*@
     @Html.Raw(item.CertBody);
+
+    if (item.CertVersion == "V02")
+    {
+        <table>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Title
+                </th>
+            </tr>
+                @foreach (var item2 in Model.ACSEventTranscript)
+                {
+                    <tr>
+                        <td>
+                            @item2.DateGranted.ToString("MM/dd/yyyy")
+                        </td>
+
+                    <td>
+                        @item2.Name
+                    </td>
+                        </tr>
+                }
+
+        </table>
+    }
 }

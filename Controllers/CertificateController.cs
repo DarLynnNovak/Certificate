@@ -39,15 +39,33 @@ namespace Certificates.Controllers
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
 							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
-							select new ACSCertificate
+							select new ACSCertificateFields
 							{
 								ID = c.ID,
 								CertBody = c.CertBody,
-								//ACSUniqueId = auid
-
+								CertVersion = e.CertificateVersion	
+								
 							}).ToList();
 
-			vm.ACSCertificate = CertInfo;
+
+
+			var EventTrans = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
+							  from e in _context.ACSCMEEvent.Where(e => e.ParentID == pcme.ACSCMEEventID)
+							  from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
+							  select new ACSCMEEvent
+							  {
+								  ID = e.ID,
+								  Name = e.Name,
+								  CME_Program = e.CME_Program,
+								  CME_Start_Date = e.CME_Start_Date,
+								  CME_End_Date = e.CME_End_Date,
+								  CME_Max_Credits = e.CME_Max_Credits,
+								  //ACSUniqueId = auid
+
+							  }).ToList();
+
+			vm.ACSCertificateFields = CertInfo;
+			vm.ACSEventTranscript = EventTrans;
 			return View(vm);
 		}
 	}

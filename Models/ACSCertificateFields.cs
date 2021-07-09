@@ -15,7 +15,9 @@ namespace Certificates.Models
 
 		public string NameTitle { get; set; }
 
+		public int EventID { get; set; }
 
-
+		[NotMapped]
+		public string CertVersion { get; set; }
 	}
 }

@@ -8,6 +8,8 @@ namespace Certificates.Models
 		//public IEnumerable<ACSPersonCME> ACSPersonCMEs { get; set; }
 		public IEnumerable<ACSCertificate> ACSCertificate { get; set; }
         public IEnumerable<ACSCertificateFields> ACSCertificateFields { get; set; }
+        public IEnumerable<ACSCMEEvent> ACSEventTranscript { get; set; }
+
         public int CertificateID { get; set; }
         public string CertBody { get; set; }
         public int EventID { get; set; }
