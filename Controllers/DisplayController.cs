@@ -15,7 +15,7 @@ namespace Certificates.Controllers
 			_context = certificateContext;
 
 		}
-		public IActionResult Index(Guid auid)
+		public IActionResult Certificate(Guid auid)
 		{
 			ACSCertificateViewModel vm = new ACSCertificateViewModel();
 			var CertInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
