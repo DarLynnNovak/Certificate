@@ -38,7 +38,7 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;EventType&gt;&gt;", et.Name)
 													.Replace("&lt;&lt;CME_Max_Credits&gt;&gt;", e.CME_Max_Credits)
 													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits) 
-							}).ToList();
+							}).ToList(); 
 
 			var TranscriptInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
 							from p in _context.Person.Where(p => p.Id == pcme.PersonID)
