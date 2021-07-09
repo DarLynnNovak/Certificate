@@ -8,6 +8,9 @@
 @{
     var data = ViewBag.Message;
 }
+@{
+    Layout = Layout = "~/Views/Shared/_certificateLayout.cshtml";
+}
 <h3>@ViewData["MyName"]</h3>
 
 @foreach (var item in Model.ACSCertificateFields)
@@ -26,18 +29,18 @@
                     Title
                 </th>
             </tr>
-                @foreach (var item2 in Model.ACSEventTranscript)
-                {
-                    <tr>
-                        <td>
-                            @item2.DateGranted.ToString("MM/dd/yyyy")
-                        </td>
+            @foreach (var item2 in Model.ACSEventTranscript)
+            {
+                <tr>
+                    <td>
+                        @item2.DateGranted.ToString("MM/dd/yyyy")
+                    </td>
 
                     <td>
                         @item2.Name
                     </td>
-                        </tr>
-                }
+                </tr>
+            }
 
         </table>
     }
