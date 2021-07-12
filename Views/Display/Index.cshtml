@@ -16,32 +16,29 @@
 @foreach (var item in Model.ACSCertificateFields)
 {
     @*@Html.Raw(item.CertBody.Replace("&lt;",""));*@
-    @Html.Raw(item.CertBody);
+    <table>
+        <tr>
+            <td>
+                @Html.Raw(item.CertBody);
+            </td>
+        </tr>
+    </table>
 
     if (item.CertVersion == "V02")
     {
-        <table>
-            <tr>
-                <th>
-                    Date
-                </th>
-                <th>
-                    Title
-                </th>
-            </tr>
-            @foreach (var item2 in Model.ACSEventTranscript)
-            {
-                <tr>
-                    <td>
-                        @item2.DateGranted.ToString("MM/dd/yyyy")
-                    </td>
-
-                    <td>
-                        @item2.Name
-                    </td>
-                </tr>
-            }
-
-        </table>
+        @Html.Partial("V02")
     }
+    if (item.CertVersion == "V02a")
+    {
+        @Html.Partial("V02a")
+    }
+    if (item.CertVersion == "V03")
+    {
+        @Html.Partial("V03")
+    }
+    if (item.CertVersion == "V03a")
+    {
+        @Html.Partial("V03a")
+    }
+
 }

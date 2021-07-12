@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Certificates.Models.ACSCertificateViewModel
+
+@{
+    var data = ViewBag.Message;
+}
+@{
+    Layout = Layout = "~/Views/Shared/_certificateLayout.cshtml";
+}
+<h3>@ViewData["MyName"]</h3>
+
+
+    <table>
+        <tr>
+            <td>
+            @foreach (var item in Model.ACSCertificateFields)
+            {
+            @Html.Raw(item.CertTrans);
+            }
+            </td>
+        </tr>
+    </table>
+    <div class="transpage">
+        <br />
+        <table>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Title
+                </th>
+            </tr>
+            @foreach (var item2 in Model.ACSEventTranscript)
+            {
+                <tr>
+                    <td>
+                        @item2.DateGranted.ToString("MM/dd/yyyy")
+                    </td>
+
+                    <td>
+                        @item2.Name
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

@@ -15,6 +15,8 @@ namespace Certificates.Data
         public DbSet<ACSCMEEvent> ACSCMEEvent { get; set; }
         public DbSet<ACSCMEEventType> ACSCMEEventType { get; set; }
         public DbSet<ACSCertificateFields> ACSCertificateFields { get; set; }
+
+        public DbSet<ACSCMESubType> ACSCMESubType { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 			modelBuilder.Entity<Person>().ToTable("Person");
@@ -23,6 +25,7 @@ namespace Certificates.Data
 			modelBuilder.Entity<ACSCMEEvent>().ToTable("ACSCMEEvent");
             modelBuilder.Entity<ACSCMEEventType>().ToTable("ACSCMEEventType");
             modelBuilder.Entity<ACSCertificateFields>().ToTable("ACSCertificateTemplateFields");
+            modelBuilder.Entity<ACSCMESubType>().ToTable("ACSCMESubType");
         }
 
     }

@@ -19,5 +19,7 @@ namespace Certificates.Models
 
 		[NotMapped]
 		public string CertVersion { get; set; }
+		[NotMapped]
+		public string CertTrans { get; set; }
 	}
 }

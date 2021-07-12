@@ -6,6 +6,7 @@ namespace Certificates.Models
 		public int ID { get; set; }
 		//public string Name { get; set; }
 		public string CertBody { get; set; }
+		public string CertTrans { get; set; }
 		[NotMapped]
 		public string ACSUniqueId { get; set; }
 

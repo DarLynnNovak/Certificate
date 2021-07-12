@@ -34,6 +34,8 @@ namespace Certificates.Models
 
         public string CertificateVersion { get; set; }
 
+        public int CMETypeID { get; set; }
+
         [NotMapped]
         
         public DateTime DateGranted { get; set; }

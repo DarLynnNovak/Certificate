@@ -10,6 +10,8 @@ namespace Certificates.Models
         public IEnumerable<ACSCertificateFields> ACSCertificateFields { get; set; }
         public IEnumerable<ACSCMEEvent> ACSEventTranscript { get; set; }
 
+        public IEnumerable<ACSCMEEvent> ACSEventRM { get; set; }
+
         public int CertificateID { get; set; }
         public string CertBody { get; set; }
         public int EventID { get; set; }
