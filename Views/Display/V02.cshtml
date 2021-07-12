@@ -26,7 +26,7 @@
     </table>
 
     <br />
-    <table border="1">
+    <table width="800px" border="1">
         <tr>
             <th>
                 Date
@@ -37,21 +37,51 @@
             <th>
                 Total Credit Hours
             </th>
+            <th>
+                Self-Assessment Hours
+            </th>
+            <th>
+                Credit to Address Regulatory Mandates Type
+            </th>
+            <th>
+                Total Hours
+            </th>
+            <th>
+                Credit to Address ACS Accreditation / Verification Requirements Type
+            </th>
+            <th>
+                Total Hours
+            </th>
+            <th>
+                Verification Level (when applicable)
+            </th>
         </tr>
         @foreach (var item2 in Model.ACSEventTranscript)
         {
-            <tr>
-                <td>
-                    @item2.DateGranted.ToString("MM/dd/yyyy")
-                </td>
-
-                <td>
-                    @item2.Name
-                </td>
-                <td>
-                    @item2.CME_Max_Credits
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @item2.DateGranted.ToString("MM/dd/yyyy")
+        </td>
+        <td>
+            @item2.Name
+        </td>
+        <td>
+            @item2.CME_Max_Credits
+        </td>
+        <td>
+            @item2.SACME_Max_Credits
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
         }
 
     </table>
