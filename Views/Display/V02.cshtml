@@ -13,40 +13,46 @@
 }
 <h3>@ViewData["MyName"]</h3>
 
-
+<div class="transpage">
     <table>
         <tr>
             <td>
-            @foreach (var item in Model.ACSCertificateFields)
-            {
-            @Html.Raw(item.CertTrans);
-            }
+                @foreach (var item in Model.ACSCertificateFields)
+                {
+                    @Html.Raw(item.CertTrans);
+                }
             </td>
         </tr>
     </table>
-    <div class="transpage">
-        <br />
-        <table>
+
+    <br />
+    <table>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Total Credit Hours
+            </th>
+        </tr>
+        @foreach (var item2 in Model.ACSEventTranscript)
+        {
             <tr>
-                <th>
-                    Date
-                </th>
-                <th>
-                    Title
-                </th>
+                <td>
+                    @item2.DateGranted.ToString("MM/dd/yyyy")
+                </td>
+
+                <td>
+                    @item2.Name
+                </td>
+                <td>
+                    @item2.CME_Max_Credits
+                </td>
             </tr>
-            @foreach (var item2 in Model.ACSEventTranscript)
-            {
-                <tr>
-                    <td>
-                        @item2.DateGranted.ToString("MM/dd/yyyy")
-                    </td>
+        }
 
-                    <td>
-                        @item2.Name
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
+    </table>
+</div>
