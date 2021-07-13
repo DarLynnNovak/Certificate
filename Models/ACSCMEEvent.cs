@@ -27,10 +27,10 @@ namespace Certificates.Models
 
         public int EventType { get; set; }
 
-        public string CME_Max_Credits { get; set; }
-        public string SACME_Max_Credits { get; set; }
-        public string CE_Max_Credits { get; set; }
-        public string SACE_Max_Credits { get; set; }
+        public decimal CME_Max_Credits { get; set; }
+        public decimal SACME_Max_Credits { get; set; }
+        public decimal CE_Max_Credits { get; set; }
+        public decimal SACE_Max_Credits { get; set; }
 
         public string CertificateVersion { get; set; }
 

@@ -36,8 +36,8 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;NameTitle&gt;&gt;", p.NameTitle)
 													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
 													.Replace("&lt;&lt;EventType&gt;&gt;", et.Name)
-													.Replace("&lt;&lt;CME_Max_Credits&gt;&gt;", e.CME_Max_Credits)
-													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits),
+													.Replace("&lt;&lt;CME_Max_Credits&gt;&gt;", Convert.ToString(e.CME_Max_Credits))
+													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", Convert.ToString(e.SACME_Max_Credits)),
 
 								CertTrans = c.CertTrans.Replace("&lt;&lt;Prefix&gt;&gt;", p.Prefix)
 													.Replace("&lt;&lt;FirstName&gt;&gt;", p.FirstName)
@@ -46,8 +46,8 @@ namespace Certificates.Controllers
 													.Replace("&lt;&lt;NameTitle&gt;&gt;", p.NameTitle)
 													.Replace("&lt;&lt;EventName&gt;&gt;", e.Name)
 													.Replace("&lt;&lt;EventType&gt;&gt;", et.Name)
-													.Replace("&lt;&lt;CME_Max_Credits&gt;&gt;", e.CME_Max_Credits)
-													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", e.SACME_Max_Credits)
+													.Replace("&lt;&lt;CME_Max_Credits&gt;&gt;", Convert.ToString(e.CME_Max_Credits))
+													.Replace("&lt;&lt;SACME_MAX_CREDITS&gt;&gt;", Convert.ToString(e.SACME_Max_Credits)),
 							}).ToList(); 
 
 			var TranscriptInfo = (from pcme in _context.ACSPersonCME.Where(pcme => pcme.ACSUniqueId == auid)
@@ -60,7 +60,10 @@ namespace Certificates.Controllers
 								  {
 										ID = e.ParentID,
 										Name = e.Name,
-										DateGranted = pcme.CMEDateGranted
+										DateGranted = pcme.CMEDateGranted,
+										CME_Max_Credits = e.CME_Max_Credits,
+										SACME_Max_Credits= e.SACME_Max_Credits
+
 									 
 								  }).ToList();
 
@@ -74,7 +77,10 @@ namespace Certificates.Controllers
 								  {
 									  ID = e.ParentID,
 									  Name = e.Name,
-									  DateGranted = pcme.CMEDateGranted
+									  DateGranted = pcme.CMEDateGranted,
+									  CME_Max_Credits = e.CME_Max_Credits,
+									  SACME_Max_Credits = e.SACME_Max_Credits
+
 
 								  }).ToList();
 
