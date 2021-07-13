@@ -77,7 +77,7 @@ namespace Certificates.Controllers
 								  {
 									  ID = e.ParentID,
 									  Name = e.Name,
-									  DateGranted = pcme.CMEDateGranted,
+									  DateGranted = pcme.CMEDateGranted, 
 									  CME_Max_Credits = e.CME_Max_Credits,
 									  SACME_Max_Credits = e.SACME_Max_Credits
 
