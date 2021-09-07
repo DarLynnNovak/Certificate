@@ -16,7 +16,7 @@
 @foreach (var item in Model.ACSCertificateFields)
 {
     @*@Html.Raw(item.CertBody.Replace("&lt;",""));*@
-    <table>
+    <table class="tablecl">
         <tr>
             <td>
                 @Html.Raw(item.CertBody);
