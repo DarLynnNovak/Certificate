@@ -14,7 +14,7 @@
 <h3>@ViewData["MyName"]</h3>
 
 <div class="transpage">
-    <table>
+    <table width="75%>
         <tr>
             <td>
                 @foreach (var item in Model.ACSCertificateFields)
@@ -24,9 +24,8 @@
             </td>
         </tr>
     </table>
-
     <br />
-    <table width="800px" border="1">
+    <table width="75%" border="1">
         <tr>
             <th>
                 Date
@@ -58,31 +57,31 @@
         </tr>
         @foreach (var item2 in Model.ACSEventTranscript)
         {
-    <tr>
-        <td>
-            @item2.DateGranted.ToString("MM/dd/yyyy")
-        </td>
-        <td>
-            @item2.Name 
-        </td>
-        <td>
-            @item2.CME_Max_Credits
-        </td>
-        <td>
-            @item2.SACME_Max_Credits
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-        } 
+            <tr>
+                <td>
+                    @item2.DateGranted.ToString("MM/dd/yyyy")
+                </td>
+                <td>
+                    @item2.Name
+                </td>
+                <td>
+                    @item2.CME_Max_Credits
+                </td>
+                <td>
+                    @item2.SACME_Max_Credits
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
 
     </table>
-</div>
+    </div>
