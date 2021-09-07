@@ -35,7 +35,8 @@ html {
   }
 }
 .transpage {
-    page-break-before: always
+    page-break-before: always;
+    width: 85%;
 }
 .border-top {
   border-top: 1px solid #e5e5e5;
