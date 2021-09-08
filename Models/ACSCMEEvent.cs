@@ -39,5 +39,7 @@ namespace Certificates.Models
         [NotMapped]
         
         public DateTime DateGranted { get; set; }
+
+        public int CMETestTemplateId { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Certificates.Controllers
 							from p in _context.Person.Where(p => p.Id == pcme.PersonID)
 							from e in _context.ACSCMEEvent.Where(e => e.ID == pcme.ACSCMEEventID)
 							from et in _context.ACSCMEEventType.Where(et=> et.ID == e.EventType)
-							from c in _context.ACSCertificate.Where(c => c.ID == e.ACSCMECertTemplate_ID)
+							from c in _context.ACSCertificate.Where(c => c.ID == e.CMETestTemplateId)
 							
 							select new ACSCertificateFields
 							{
@@ -87,7 +87,7 @@ namespace Certificates.Controllers
 
 			vm.ACSCertificateFields = CertInfo;
 
-			if (TranscriptInfo != null)
+			if (TranscriptInfo != null)                                                                                                                           
 			{ vm.ACSEventTranscript = TranscriptInfo; }
 			if (RegMandate != null)
 			{ vm.ACSEventRM = RegMandate; }

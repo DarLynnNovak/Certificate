@@ -16,29 +16,25 @@
 @foreach (var item in Model.ACSCertificateFields)
 {
     @*@Html.Raw(item.CertBody.Replace("&lt;",""));*@
-    <table>
-        <tr>
-            <td>
-                @Html.Raw(item.CertBody);
-            </td>
-        </tr>
-    </table>
-
-    if (item.CertVersion == "V02")
-    {
-        @Html.Partial("V02")
-    }
-    if (item.CertVersion == "V02a")
-    {
-        @Html.Partial("V02a")
-    }
-    if (item.CertVersion == "V03")
-    {
-        @Html.Partial("V03")
-    }
-    if (item.CertVersion == "V03a")
-    {
-        @Html.Partial("V03a")
-    }
+    
+<div class="Main-table">
+    @Html.Raw(item.CertBody);
+</div>
+                if (item.CertVersion == "V02")
+                {
+                @Html.Partial("V02")
+                }
+                if (item.CertVersion == "V02a")
+                {
+                @Html.Partial("V02a")
+                }
+                if (item.CertVersion == "V03")
+                {
+                @Html.Partial("V03")
+                }
+                if (item.CertVersion == "V03a")
+                {
+                @Html.Partial("V03a")
+                }
 
 }

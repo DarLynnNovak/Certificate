@@ -54,7 +54,7 @@ namespace Certificates.Controllers
                     var principal = new ClaimsPrincipal(identity);
                     var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                     TempData["auid"] = auid;
-                    return RedirectToAction("Index", "Certificate");
+                    return RedirectToAction("Index", "Display");
                 }
             }
             return View();

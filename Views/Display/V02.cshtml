@@ -13,7 +13,7 @@
 }
 <h3>@ViewData["MyName"]</h3>
 
-<div class="transpage">
+
     <table>
         <tr>
             <td>
@@ -24,8 +24,9 @@
             </td>
         </tr>
     </table>
-        <br />
-        <table width="800px" border="1">
+    <br />
+    <table class="Summary-table">
+        <thead>
             <tr>
                 <th>
                     Date
@@ -55,6 +56,8 @@
                     Verification Level (when applicable)
                 </th>
             </tr>
+            </thead>
+        <tbody>
             @foreach (var item2 in Model.ACSEventTranscript)
             {
                 <tr>
@@ -82,6 +85,6 @@
                     </td>
                 </tr>
             }
+        </tbody>
+    </table>
 
-        </table>
-    </div>

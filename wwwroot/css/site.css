@@ -72,3 +72,44 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+.Summary-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+    width: 90%;
+}
+
+    .Summary-table thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+
+    .Summary-table tbody td {
+        border: solid 1px #DDEEEE;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }
+.Main-table {
+    font: normal 13px Arial, sans-serif;
+    width: 90%;
+}
+
+    .Main-table thead th {
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+
+    .Main-table tbody td {
+        border: none;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }
